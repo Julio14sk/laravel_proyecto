@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,6 +33,8 @@ Route::get('/suma/{n1}/{n2}', function ($n1, $n2) {
 Route::get('/resta/{n1}/{n2}', function ($n1, $n2) {
     return $n1 - $n2;
 })->where(['n1' => '[0-9]+',' n2' => '[0-9]+']);
+
+Route::get('/user', [UserController::class, 'index']);
 
 Route::get('/producto/{n1}/{n2}', function ($n1, $n2) {
     return $n1 * $n2;
